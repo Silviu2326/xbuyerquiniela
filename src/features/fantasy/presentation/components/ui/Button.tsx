@@ -75,14 +75,7 @@ export function Button({
       background: 'var(--color-error)',
       color: 'white',
     },
-  };
-  
-  // Hover/active states via CSS
-  const hoverStyles: CSSProperties = {
-    ':hover': {
-      opacity: disabled || isLoading ? 0.5 : 0.9,
-    } as any,
-  };
+};
   
   return (
     <button

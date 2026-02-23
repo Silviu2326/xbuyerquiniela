@@ -3,7 +3,6 @@ import {
   ChevronLeft,
   Trophy,
   TrendingUp,
-  Zap,
   Search
 } from 'lucide-react';
 import { Header } from '../home/Header';

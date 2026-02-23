@@ -192,11 +192,11 @@ export function DTStandings() {
             <div className="dt-standings__table">
               {/* Header */}
               <div className="dt-standings__table-header">
-                <span className="dt-standings__col-rank" className="text-gray-400" style={{ fontSize: '0.625rem' }}>#</span>
+<span className="dt-standings__col-rank text-gray-400" style={{ fontSize: '0.625rem' }}>#</span>
                 <span style={{ flex: 1, color: '#a0a0b0', fontSize: '0.625rem' }}>Equipo</span>
-                <span className="dt-standings__col-num" className="text-gray-400" style={{ fontSize: '0.625rem' }}>PJ</span>
-                <span className="dt-standings__col-num" className="text-gray-400" style={{ fontSize: '0.625rem' }}>GF</span>
-                <span className="dt-standings__col-num" className="text-gray-400" style={{ fontSize: '0.625rem' }}>DG</span>
+                <span className="dt-standings__col-num text-gray-400" style={{ fontSize: '0.625rem' }}>PJ</span>
+                <span className="dt-standings__col-num text-gray-400" style={{ fontSize: '0.625rem' }}>GF</span>
+                <span className="dt-standings__col-num text-gray-400" style={{ fontSize: '0.625rem' }}>DG</span>
                 <span className="dt-standings__col-points" style={{ color: '#FFE600', fontSize: '0.625rem' }}>PTS</span>
               </div>
 
