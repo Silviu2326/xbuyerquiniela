@@ -439,4 +439,11 @@
     height: 160px;
   }
 
-  .ne
+  .news-card-content {
+    padding: 1.25rem;
+  }
+
+  .news-card-title {
+    font-size: 1rem;
+  }
+}

@@ -246,4 +246,12 @@ export const News = ({ onNavigate, points }: NewsProps) => {
                     </div>
                     <div className="news-card-read-more">Leer más →</div>
                   </div>
-  
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </MobileLayout>
+  );
+};
