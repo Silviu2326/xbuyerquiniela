@@ -1,0 +1,1059 @@
+/* ========================================
+   DTLanding - Modo DT Landing Page Styles
+   ======================================== */
+
+/* ========================================
+   Layout Principal
+   ======================================== */
+
+.dt-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #0d1525 50%, #0a1628 100%);
+  position: relative;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+/* Efectos de fondo azules */
+.dt-landing::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      ellipse at 20% 20%,
+      rgba(0, 71, 171, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(0, 119, 255, 0.05) 0%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================================
+   Header / Banner
+   ======================================== */
+
+.dt-landing__header {
+  position: relative;
+  padding: 3rem 1rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.dt-landing__header-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 71, 171, 0.3) 0%,
+    transparent 60%
+  );
+}
+
+.dt-landing__header-glow-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(
+    circle,
+    rgba(0, 119, 255, 0.25) 0%,
+    rgba(0, 71, 171, 0.15) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: pulse-blue 4s ease-in-out infinite;
+}
+
+.dt-landing__header-glow-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 8rem;
+  height: 8rem;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(0, 165, 233, 0.1) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse-blue 4s ease-in-out infinite 2s;
+}
+
+@keyframes pulse-blue {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.dt-landing__logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #0047ab 0%, #0ea5e9 50%, #3b82f6 100%);
+  box-shadow:
+    0 0 30px rgba(0, 71, 171, 0.5),
+    0 0 60px rgba(59, 130, 246, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  margin-bottom: 0.5rem;
+  transition: var(--transition-base);
+  animation: glow-blue 3s ease-in-out infinite;
+}
+
+@keyframes glow-blue {
+  0%,
+  100% {
+    box-shadow:
+      0 0 30px rgba(0, 71, 171, 0.5),
+      0 0 60px rgba(59, 130, 246, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(0, 71, 171, 0.7),
+      0 0 80px rgba(59, 130, 246, 0.4),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+.dt-landing__logo:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.dt-landing__logo svg {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.dt-landing__title {
+  position: relative;
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #0047ab 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.125rem;
+  text-shadow: none;
+  letter-spacing: -0.02em;
+  animation: shimmer-blue 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-blue {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.dt-landing__subtitle {
+  position: relative;
+  color: #60a5fa;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+.dt-landing__description {
+  position: relative;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  max-width: 18rem;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* ========================================
+   Contenido Principal
+   ======================================== */
+
+.dt-landing__content {
+  position: relative;
+  padding: 0 0.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .dt-landing__content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dt-landing__content {
+    width: 100%;
+    gap: 0.875rem;
+  }
+}
+
+/* ========================================
+   Cards
+   ======================================== */
+
+.dt-card {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.8) 0%,
+    rgba(13, 13, 13, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.dt-card:hover::before {
+  opacity: 1;
+}
+
+.dt-card:active {
+  transform: scale(0.98);
+}
+
+/* Card Variants */
+.dt-card--primary {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 71, 171, 0.25) 0%,
+    rgba(0, 71, 171, 0.08) 100%
+  );
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.dt-card--primary:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 71, 171, 0.35) 0%,
+    rgba(0, 71, 171, 0.12) 100%
+  );
+  box-shadow:
+    0 0 25px rgba(0, 71, 171, 0.3),
+    0 0 50px rgba(59, 130, 246, 0.15);
+  border-color: rgba(96, 165, 250, 0.6);
+}
+
+.dt-card--disabled {
+  background: rgba(26, 26, 36, 0.5);
+  border-color: rgba(42, 42, 58, 0.2);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dt-card--disabled:active {
+  transform: none;
+}
+
+.dt-card--blue {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.2) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dt-card--blue:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.3) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  box-shadow:
+    0 0 20px rgba(0, 71, 171, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.15);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.dt-card--amber {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 255, 0.15) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+.dt-card--amber:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 255, 0.25) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  box-shadow:
+    0 0 20px rgba(0, 119, 255, 0.3),
+    0 0 40px rgba(14, 165, 233, 0.15);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.dt-card--primary:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 230, 0, 0.3) 0%,
+    rgba(255, 230, 0, 0.1) 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 230, 0, 0.2);
+}
+
+.dt-card--disabled {
+  background: rgba(26, 26, 36, 0.5);
+  border-color: rgba(42, 42, 58, 0.2);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dt-card--disabled:active {
+  transform: none;
+}
+
+.dt-card--blue {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 0, 0.1) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border-color: rgba(255, 230, 0, 0.3);
+}
+
+.dt-card--blue:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 0, 0.2) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+}
+
+.dt-card--amber {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.1) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.dt-card--amber:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.2) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+}
+
+/* Card Content */
+.dt-card__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dt-card__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.dt-card:hover .dt-card__icon {
+  transform: scale(1.1);
+}
+
+.dt-card__icon--primary {
+  background: linear-gradient(135deg, #0047ab 0%, #0ea5e9 100%);
+  box-shadow:
+    0 4px 20px rgba(0, 71, 171, 0.5),
+    0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.dt-card__icon--disabled {
+  background: #374151;
+}
+
+.dt-card__icon--blue {
+  background: linear-gradient(135deg, #0047ab 0%, #3b82f6 100%);
+  box-shadow:
+    0 4px 20px rgba(0, 71, 171, 0.5),
+    0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.dt-card__icon--amber {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  box-shadow:
+    0 4px 20px rgba(14, 165, 233, 0.5),
+    0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.dt-card__icon--disabled {
+  background: #374151;
+}
+
+.dt-card__icon--blue {
+  background: linear-gradient(135deg, #ffe600 0%, #0047ab 100%);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.4);
+}
+
+.dt-card__icon--amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.dt-card__icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  color: white;
+}
+
+.dt-card__icon--disabled svg {
+  color: #6b7280;
+}
+
+.dt-card__text {
+  flex: 1;
+  text-align: left;
+}
+
+.dt-card__title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 0.125rem;
+}
+
+.dt-card__description {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.dt-card__badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dt-card__badge--success {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.3) 0%,
+    rgba(59, 130, 246, 0.2) 100%
+  );
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.dt-card__badge--error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.dt-card__badge--success {
+  background: rgba(255, 230, 0, 0.2);
+  color: #ffe600;
+}
+
+.dt-card__badge--error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Card Grid */
+.dt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+}
+
+@media (min-width: 640px) {
+  .dt-card-grid {
+    gap: 0.75rem;
+  }
+}
+
+.dt-card-grid .dt-card {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dt-card-grid .dt-card__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dt-card-grid .dt-card__icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dt-card-grid .dt-card__title {
+  font-size: 0.8125rem;
+}
+
+.dt-card-grid .dt-card__description {
+  font-size: 0.6875rem;
+}
+
+/* ========================================
+   Carreras Activas
+   ======================================== */
+
+.dt-careers__header {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.dt-careers__header svg {
+  color: #3b82f6;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.dt-careers__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dt-career-card {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.15) 0%,
+    rgba(10, 15, 30, 0.95) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 71, 171, 0.1);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.dt-career-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.25) 0%,
+    rgba(10, 15, 30, 0.95) 100%
+  );
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 71, 171, 0.2);
+}
+
+.dt-careers__header svg {
+  color: var(--color-primary-light);
+}
+
+.dt-careers__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dt-career-card {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.9) 0%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: var(--dt-shadow);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.dt-career-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 42, 58, 0.9) 0%,
+    rgba(26, 26, 36, 0.95) 100%
+  );
+  border-color: rgba(255, 230, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.dt-career-card:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.dt-career-card__content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dt-career-card__flag {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #0047ab 0%, #0ea5e9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  box-shadow:
+    0 4px 15px rgba(0, 71, 171, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.2);
+  flex-shrink: 0;
+}
+
+.dt-career-card__info {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.dt-career-card__name {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dt-career-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+}
+
+.dt-career-card__stat {
+  font-weight: 700;
+}
+
+.dt-career-card__stat--win {
+  color: #60a5fa;
+}
+
+.dt-career-card__stat--draw {
+  color: #38bdf8;
+}
+
+.dt-career-card__stat--loss {
+  color: #f87171;
+}
+
+.dt-career-card__stat--divider {
+  color: var(--text-tertiary);
+}
+
+.dt-career-card__stat--total {
+  color: var(--text-secondary);
+}
+
+.dt-career-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.dt-career-card__play {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0047ab 0%, #3b82f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 15px rgba(0, 71, 171, 0.5),
+    0 0 20px rgba(59, 130, 246, 0.3);
+  transition: var(--transition-fast);
+}
+
+.dt-career-card__play:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 20px rgba(0, 71, 171, 0.6),
+    0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.dt-career-card__play:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 230, 0, 0.5);
+}
+
+.dt-career-card__play svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: white;
+  margin-left: 0.125rem;
+}
+
+.dt-career-card__delete {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.dt-career-card__delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.dt-career-card__delete svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #f87171;
+}
+
+/* ========================================
+   Stats Summary
+   ======================================== */
+
+.dt-stats {
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 71, 171, 0.15) 0%,
+    rgba(10, 15, 30, 0.95) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 71, 171, 0.1);
+}
+
+.dt-stats__title {
+  color: #60a5fa;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.625rem;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.dt-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.dt-stat {
+  text-align: center;
+}
+
+.dt-stat__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  font-size: 1.125rem;
+  font-weight: 900;
+  margin-bottom: 0.125rem;
+}
+
+.dt-stat__value svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.dt-stat__value--green {
+  color: #60a5fa;
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+}
+
+.dt-stat__value--blue {
+  color: #38bdf8;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.dt-stat__value--amber {
+  color: #0ea5e9;
+  text-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+.dt-stat__label {
+  color: #94a3b8;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dt-stats__title {
+  color: var(--text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.625rem;
+}
+
+.dt-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.dt-stat {
+  text-align: center;
+}
+
+.dt-stat__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  font-size: 1.125rem;
+  font-weight: 900;
+  margin-bottom: 0.125rem;
+}
+
+.dt-stat__value svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.dt-stat__value--green {
+  color: var(--color-primary-lighter);
+}
+
+.dt-stat__value--blue {
+  color: #ffe600;
+}
+
+.dt-stat__value--amber {
+  color: #fbbf24;
+}
+
+.dt-stat__label {
+  color: var(--text-tertiary);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ========================================
+   Back Button (Top Left)
+   ======================================== */
+
+.dt-btn-back {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.9) 0%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  box-shadow: var(--dt-shadow);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.dt-btn-back:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 42, 58, 0.9) 0%,
+    rgba(26, 26, 36, 0.95) 100%
+  );
+  border-color: rgba(42, 42, 58, 0.3);
+  transform: scale(1.05);
+}
+
+.dt-btn-back:active {
+  transform: scale(0.95);
+}
+
+.dt-btn-back svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: var(--transition-fast);
+}
+
+.dt-btn-back:hover svg {
+  transform: translateX(-2px);
+}
+
+/* ========================================
+   Animaciones
+   ======================================== */
+
+/* Animaciones desactivadas temporalmente */
+/* @keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+/* ========================================
+   Scrollbar personalizada
+   ======================================== */
+
+.dt-landing::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dt-landing::-webkit-scrollbar-track {
+  background: rgba(0, 71, 171, 0.1);
+}
+
+.dt-landing::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0047ab 0%, #3b82f6 100%);
+  border-radius: 3px;
+}
+
+.dt-landing::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+/* ========================================
+   Responsive Desktop
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .dt-landing__header {
+    padding: 2rem 1rem 1.25rem;
+  }
+
+  .dt-landing__title {
+    font-size: 1.75rem;
+  }
+
+  .dt-landing__subtitle {
+    font-size: 1rem;
+  }
+
+  .dt-landing__description {
+    font-size: 0.875rem;
+    max-width: 20rem;
+  }
+
+  .dt-card__title {
+    font-size: 1rem;
+  }
+
+  .dt-card__description {
+    font-size: 0.8125rem;
+  }
+
+  .dt-stats__title {
+    font-size: 0.75rem;
+  }
+
+  .dt-stat__value {
+    font-size: 1.375rem;
+  }
+
+  .dt-stat__label {
+    font-size: 0.625rem;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

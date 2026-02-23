@@ -1,0 +1,517 @@
+/* ========================================
+   DTTeamStats - Estadísticas del Equipo
+   ======================================== */
+
+.dt-stats__tabs {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.9) 0%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  border: 1px solid rgba(160, 160, 176, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.dt-stats__tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: none;
+  background: transparent;
+  color: #a0a0b0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dt-stats__tab--active {
+  background: linear-gradient(90deg, #FFE600 0%, #0047AB 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.dt-stats__tab:hover:not(.dt-stats__tab--active) {
+  color: white;
+  background: rgba(160, 160, 176, 0.1);
+}
+
+/* Content Container */
+.dt-stats__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Card Sections */
+.dt-stats__card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.9) 0%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  border: 1px solid rgba(160, 160, 176, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dt-stats__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dt-stats__card-header svg {
+  color: #FFE600;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Tournament Stats Grid */
+.dt-stats__grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.dt-stats__grid-item {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(160, 160, 176, 0.1);
+}
+
+.dt-stats__grid-value {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.dt-stats__grid-value--blue {
+  color: #FFE600;
+}
+.dt-stats__grid-value--yellow {
+  color: #facc15;
+}
+.dt-stats__grid-value--red {
+  color: #f87171;
+}
+
+.dt-stats__grid-label {
+  color: #a0a0b0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Team Stats List */
+.dt-stats__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dt-stats__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(160, 160, 176, 0.1);
+}
+
+.dt-stats__list-item:last-child {
+  border-bottom: none;
+}
+
+.dt-stats__list-label {
+  color: #a0a0b0;
+  font-size: 0.875rem;
+}
+
+.dt-stats__list-value {
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.dt-stats__list-value--positive {
+  color: #FFE600;
+}
+
+.dt-stats__list-value--negative {
+  color: #f87171;
+}
+
+/* Discipline Cards */
+.dt-stats__discipline {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dt-stats__discipline-card {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dt-stats__discipline-card--yellow {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.dt-stats__discipline-card--red {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dt-stats__discipline-value {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.dt-stats__discipline-value--yellow {
+  color: #facc15;
+}
+
+.dt-stats__discipline-value--red {
+  color: #f87171;
+}
+
+.dt-stats__discipline-label {
+  color: #a0a0b0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Featured Player */
+.dt-stats__featured {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 0, 0.2) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dt-stats__featured-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFE600;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dt-stats__featured-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dt-stats__featured-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #FFE600 0%, #0047AB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.4);
+}
+
+.dt-stats__featured-avatar span {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+}
+
+.dt-stats__featured-info h4 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.dt-stats__featured-meta {
+  color: #a0a0b0;
+  font-size: 0.875rem;
+}
+
+.dt-stats__featured-highlight {
+  color: #FFE600;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Players Table */
+.dt-stats__table-container {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.9) 0%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  border: 1px solid rgba(160, 160, 176, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dt-stats__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dt-stats__table th {
+  background: rgba(26, 26, 36, 0.8);
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  color: #a0a0b0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dt-stats__table th:first-child {
+  padding-left: 1rem;
+}
+
+.dt-stats__table td {
+  padding: 0.75rem 0.5rem;
+  border-top: 1px solid rgba(160, 160, 176, 0.1);
+}
+
+.dt-stats__table td:first-child {
+  padding-left: 1rem;
+}
+
+.dt-stats__table tr:nth-child(even) {
+  background: rgba(26, 26, 36, 0.2);
+}
+
+.dt-stats__table-player {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dt-stats__table-pos {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.625rem;
+}
+
+.dt-stats__table-pos--gk {
+  background: rgba(251, 146, 60, 0.2);
+  color: #fb923c;
+}
+
+.dt-stats__table-pos--def {
+  background: rgba(255, 230, 0, 0.2);
+  color: #FFE600;
+}
+
+.dt-stats__table-pos--mid {
+  background: rgba(255, 230, 0, 0.2);
+  color: #FFE600;
+}
+
+.dt-stats__table-pos--fwd {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.dt-stats__table-name {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.dt-stats__table-minutes {
+  color: #6b6b7b;
+  font-size: 0.75rem;
+}
+
+.dt-stats__table-value {
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+
+.dt-stats__table-value--goals {
+  color: #FFE600;
+}
+
+.dt-stats__table-value--assists {
+  color: #FFE600;
+}
+
+.dt-stats__table-value--rating-good {
+  color: #FFE600;
+}
+
+.dt-stats__table-value--rating-medium {
+  color: #facc15;
+}
+
+.dt-stats__table-value--rating-bad {
+  color: #a0a0b0;
+}
+
+/* Top Scorers List */
+.dt-stats__top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dt-stats__top-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid;
+}
+
+.dt-stats__top-item--gold {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 204, 21, 0.2) 0%,
+    transparent 100%
+  );
+  border-color: rgba(250, 204, 21, 0.3);
+}
+
+.dt-stats__top-item--silver {
+  background: linear-gradient(
+    90deg,
+    rgba(160, 160, 176, 0.2) 0%,
+    transparent 100%
+  );
+  border-color: rgba(160, 160, 176, 0.3);
+}
+
+.dt-stats__top-item--bronze {
+  background: linear-gradient(
+    90deg,
+    rgba(251, 146, 60, 0.2) 0%,
+    transparent 100%
+  );
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.dt-stats__top-item--default {
+  background: rgba(26, 26, 36, 0.5);
+  border-color: rgba(160, 160, 176, 0.2);
+}
+
+.dt-stats__top-rank {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.dt-stats__top-rank--gold {
+  background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+  color: black;
+}
+
+.dt-stats__top-rank--silver {
+  background: linear-gradient(135deg, #a0a0b0 0%, #475569 100%);
+  color: black;
+}
+
+.dt-stats__top-rank--bronze {
+  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  color: white;
+}
+
+.dt-stats__top-rank--default {
+  background: #2a2a3a;
+  color: white;
+}
+
+.dt-stats__top-info {
+  flex: 1;
+}
+
+.dt-stats__top-info h4 {
+  color: white;
+  font-weight: 700;
+}
+
+.dt-stats__top-info p {
+  color: #a0a0b0;
+  font-size: 0.75rem;
+}
+
+.dt-stats__top-score {
+  text-align: right;
+}
+
+.dt-stats__top-score-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFE600;
+}
+
+.dt-stats__top-score-label {
+  color: #a0a0b0;
+  font-size: 0.75rem;
+}
+
+/* Clean Sheets */
+.dt-stats__clean-sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 26, 36, 0.5);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(160, 160, 176, 0.2);
+}
+
+.dt-stats__clean-sheet-rank {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 230, 0, 0.2);
+  color: #FFE600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}

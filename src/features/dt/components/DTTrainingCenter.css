@@ -1,0 +1,490 @@
+/* ========================================
+   DTTrainingCenter - Centro de Entrenamiento
+   ======================================== */
+
+/* ========================================
+   Training Completed View
+   ======================================== */
+
+.train-completed {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.train-completed__card {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+}
+
+.train-completed__icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.train-completed__title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.train-completed__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.train-completed__stat {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  text-align: center;
+}
+
+.train-completed__stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.train-completed__stat-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.train-completed__stat-value--positive {
+  color: var(--color-success-light);
+}
+
+.train-completed__stat-value--negative {
+  color: var(--color-error-light);
+}
+
+.train-completed__stat-label {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+.train-completed__injuries {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.train-completed__injuries-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-error-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.train-completed__injuries-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.train-completed__btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    #FFE600 0%,
+    #0047AB 100%
+  );
+  color: black;
+  font-weight: 900;
+  font-size: 1.125rem;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.train-completed__btn:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   Squad Status
+   ======================================== */
+
+.train-squad {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.train-squad__card {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+
+.train-squad__title {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.train-squad__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.train-squad__stat {
+  text-align: center;
+}
+
+.train-squad__stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.train-squad__stat-value--fit {
+  color: var(--color-success-light);
+}
+
+.train-squad__stat-value--tired {
+  color: var(--color-warning-light);
+}
+
+.train-squad__stat-value--exhausted {
+  color: var(--color-error-light);
+}
+
+.train-squad__stat-value--injured {
+  color: #fb923c;
+}
+
+.train-squad__stat-label {
+  color: var(--text-tertiary);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   Training Type Selection
+   ======================================== */
+
+.train-types {
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.train-types__title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.train-types__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.train-type {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  background: none;
+}
+
+.train-type--selected {
+  border-color: #FFE600;
+  background: rgba(255, 230, 0, 0.1);
+}
+
+.train-type--unselected {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border-color: var(--border-primary);
+}
+
+.train-type--unselected:hover {
+  border-color: #2a2a3a;
+}
+
+.train-type__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.train-type__icon--tactical {
+  background: linear-gradient(
+    135deg,
+    #FFE600 0%,
+    #0047AB 100%
+  );
+}
+
+.train-type__icon--physical {
+  background: linear-gradient(135deg, var(--color-error) 0%, #f97316 100%);
+}
+
+.train-type__icon--technical {
+  background: linear-gradient(
+    135deg,
+    #FFE600 0%,
+    #0047AB 100%
+  );
+}
+
+.train-type__icon--rest {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+.train-type__name {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.train-type__desc {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ========================================
+   Intensity Selection
+   ======================================== */
+
+.train-intensity {
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.train-intensity__title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.train-intensity__options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.train-intensity__btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.train-intensity__btn--low {
+  background: #0047AB;
+  color: black;
+}
+
+.train-intensity__btn--medium {
+  background: var(--color-warning);
+  color: black;
+}
+
+.train-intensity__btn--high {
+  background: var(--color-error);
+  color: white;
+}
+
+.train-intensity__btn--unselected {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+}
+
+.train-intensity__btn--unselected:hover {
+  border-color: #2a2a3a;
+}
+
+/* ========================================
+   Effect Preview
+   ======================================== */
+
+.train-preview {
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.train-preview__title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.train-preview__card {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+
+.train-preview__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.train-preview__stat {
+  text-align: center;
+}
+
+.train-preview__stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.train-preview__stat-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.train-preview__stat-value--positive {
+  color: var(--color-success-light);
+}
+
+.train-preview__stat-value--negative {
+  color: var(--color-error-light);
+}
+
+.train-preview__stat-value--low-risk {
+  color: var(--color-success-light);
+}
+
+.train-preview__stat-value--medium-risk {
+  color: var(--color-warning-light);
+}
+
+.train-preview__stat-value--high-risk {
+  color: var(--color-error-light);
+}
+
+.train-preview__stat-label {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+.train-preview__warning {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.train-preview__warning p {
+  color: var(--color-error-light);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* ========================================
+   Action Buttons
+   ======================================== */
+
+.train-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    #0D0D0D 0%,
+    rgba(13, 13, 13, 0.95) 50%,
+    transparent 100%
+  );
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.train-actions__btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 900;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.train-actions__btn--primary {
+  background: linear-gradient(
+    90deg,
+    #FFE600 0%,
+    #0047AB 100%
+  );
+  color: black;
+}
+
+.train-actions__btn--primary:active {
+  transform: scale(0.98);
+}
+
+.train-actions__btn--secondary {
+  background: linear-gradient(
+    135deg,
+    #1a1a24 0%,
+    #12121a 100%
+  );
+  border: 1px solid var(--border-primary);
+  color: white;
+  font-weight: 700;
+}
+
+.train-actions__btn--secondary:active {
+  background: rgba(51, 65, 85, 0.9);
+}

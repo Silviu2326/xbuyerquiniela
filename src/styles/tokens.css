@@ -1,0 +1,315 @@
+/* ============================================
+   SISTEMA DE DISEÑO - QUINIELA MUNDIAL 2026
+   Tokens globales para toda la aplicación
+   ============================================ */
+
+:root {
+  /* COLORS - Brand (Paleta XBuyer: Azul y Amarillo) */
+  --color-primary: #0047ab;
+  --color-primary-dark: #003380;
+  --color-primary-darker: #00255c;
+  --color-primary-light: #ffe600;
+  --color-primary-lighter: #fff200;
+  --color-primary-muted: #1e3a5f;
+
+  /* COLORS - Secondary (Azul Cielo) */
+  --color-secondary: #0ea5e9;
+  --color-secondary-dark: #0284c7;
+  --color-secondary-light: #38bdf8;
+
+  /* COLORS - Blues Palette (Más tonos de azul) */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
+
+  /* Colores azules personalizados */
+  --color-azure: #007fff;
+  --color-cerulean: #007ba7;
+  --color-cobalt: #0047ab;
+  --color-sapphire: #0f52ba;
+  --color-sky-blue: #87ceeb;
+  --color-electric-blue: #7df9ff;
+  --color-powder-blue: #b0e0e6;
+  --color-steel-blue: #4682b4;
+  --color-navy: #000080;
+  --color-midnight: #191970;
+
+  /* COLORS - Accent (Amarillo XBuyer) */
+  --color-accent: #ffe600;
+  --color-accent-dark: #e6cf00;
+  --color-accent-light: #fff200;
+
+  /* COLORS - Semantic */
+  --color-success: #0047ab;
+  --color-success-light: #3b82f6; /* TODO: Update to lighter XBuyer blue */
+  --color-warning: #ffe600;
+  --color-warning-light: #fff200;
+  --color-error: #ef4444;
+  --color-error-light: #f87171;
+  --color-info: #0047ab;
+  --color-live: #ffe600;
+
+  /* COLORS - State variations */
+  --color-qualified: var(--color-primary-light);
+  --color-playoff: #facc15;
+  --color-eliminated: var(--color-error);
+
+  /* COLORS - Backgrounds */
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #141c32;
+  --bg-tertiary: #1c2640;
+  --bg-elevated: #2d3a5f;
+  --bg-overlay: rgba(13, 18, 37, 0.9);
+
+  /* COLORS - Text */
+  --text-primary: #ffffff;
+  --text-secondary: #8b9dc3;
+  --text-tertiary: #5a6a85;
+  --text-muted: #3d4a6f;
+
+  /* COLORS - Borders */
+  --border-primary: #2d3a5f;
+  --border-secondary: #3d4a6f;
+  --border-focus: var(--color-primary);
+
+  /* ALIASES - Para migración (mapeo de valores hardcodeados comunes) */
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --surface-dark: #141414;
+  --surface-card: #1a1a1a;
+  --surface-elevated: #1f1f1f;
+
+  /* SPACING - Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* SPACING - Layout */
+  --page-padding: 16px;
+  --section-gap: 24px;
+  --card-padding: 16px;
+
+  /* TYPOGRAPHY - Font Family */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* TYPOGRAPHY - Sizes */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+
+  /* TYPOGRAPHY - Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-black: 800;
+
+  /* TYPOGRAPHY - Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* BORDER RADIUS */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* SHADOWS */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 71, 171, 0.4);
+  --shadow-glow-accent: 0 0 15px rgba(255, 230, 0, 0.3);
+
+  /* TRANSITIONS */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Z-INDEX */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100%;
+  background: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d3a5f;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4a6f;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn var(--transition-base);
+}
+.animate-slideUp {
+  animation: slideUp var(--transition-base);
+}
+.animate-slideInRight {
+  animation: slideInRight var(--transition-base);
+}
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(20, 28, 50, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

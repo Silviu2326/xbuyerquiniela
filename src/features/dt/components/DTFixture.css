@@ -1,0 +1,895 @@
+/* ========================================
+   DTFixture - Calendario / Fixture
+   ======================================== */
+
+/* ========================================
+   Empty State (No Career)
+   ======================================== */
+
+.fix-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.fix-empty p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.fix-empty__btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.fix-empty__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.4);
+}
+
+/* ========================================
+   Pre-Tournament View
+   ======================================== */
+
+.fix-prep__team {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fix-prep__team-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fix-prep__flag-wrapper {
+  position: relative;
+}
+
+.fix-prep__flag-glow {
+  position: absolute;
+  inset: -0.5rem;
+  background: rgba(255, 230, 0, 0.3);
+  border-radius: 0.75rem;
+  filter: blur(8px);
+}
+
+.fix-prep__flag {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.fix-prep__team-info h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.fix-prep__team-info p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.fix-prep__squad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.fix-prep__pos {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--border-primary);
+}
+
+.fix-prep__pos-count {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-primary-light);
+}
+
+.fix-prep__pos-label {
+  color: var(--text-tertiary);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.fix-prep__formation {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fix-prep__formation-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fix-prep__formation-value {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.fix-prep__start-wrapper {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.fix-prep__start-glow {
+  position: absolute;
+  inset: -1rem;
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+  border-radius: 2rem;
+  filter: blur(12px);
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+.fix-prep__start-btn {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 10px 30px rgba(255, 230, 0, 0.3);
+}
+
+.fix-prep__start-btn:hover {
+  transform: scale(1.02);
+}
+
+.fix-prep__start-btn:active {
+  transform: scale(0.98);
+}
+
+.fix-prep__start-btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fix-prep__start-hint {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+/* ========================================
+   Next Match Card
+   ======================================== */
+
+.fix-next {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fix-next__bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 230, 0, 0.05);
+}
+
+.fix-next__content {
+  position: relative;
+}
+
+.fix-next__badge {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.fix-next__badge span {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background: rgba(255, 230, 0, 0.2);
+  color: var(--color-primary-light);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 230, 0, 0.3);
+}
+
+.fix-next__teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.fix-next__team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fix-next__team-flag {
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.fix-next__team-flag--rival {
+  background: #2a2a3a;
+}
+
+.fix-next__team-name {
+  color: white;
+  font-weight: 700;
+}
+
+.fix-next__team-name--rival {
+  color: var(--text-secondary);
+}
+
+.fix-next__vs {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2a2a3a;
+}
+
+.fix-next__training {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.fix-next__training-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fbbf24;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.fix-next__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.fix-next__btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-fast);
+}
+
+.fix-next__btn--train {
+  background: rgba(51, 65, 85, 0.5);
+  color: white;
+  border: 1px solid var(--border-primary);
+}
+
+.fix-next__btn--train:hover {
+  background: rgba(71, 85, 105, 0.5);
+}
+
+.fix-next__btn--play {
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.fix-next__btn--play:hover {
+  transform: scale(1.02);
+}
+
+/* ========================================
+   Tournament Completed
+   ======================================== */
+
+.fix-completed {
+  background: linear-gradient(135deg, rgba(255, 230, 0, 0.2) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fix-completed svg {
+  color: var(--color-primary-light);
+  margin-bottom: 1rem;
+}
+
+.fix-completed h3 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.fix-completed p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.fix-completed__btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+/* ========================================
+   Tabs
+   ======================================== */
+
+.fix-tabs {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.fix-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.fix-tab--active {
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.fix-tab:hover:not(.fix-tab--active) {
+  color: white;
+  background: rgba(148, 163, 184, 0.1);
+}
+
+/* ========================================
+   Phase Info
+   ======================================== */
+
+.fix-phase {
+  background: linear-gradient(90deg, rgba(255, 230, 0, 0.1) 0%, transparent 100%);
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fix-phase__info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fix-phase__info svg {
+  color: var(--color-primary-light);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.fix-phase__info span {
+  color: var(--color-primary-light);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fix-phase__hint {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   Matches List
+   ======================================== */
+
+.fix-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fix-match {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.fix-match--win {
+  background: rgba(255, 230, 0, 0.1);
+  border-color: rgba(255, 230, 0, 0.3);
+}
+
+.fix-match--draw {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.fix-match--loss {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.fix-match--pending {
+  background: #1a1a24;
+  border-color: var(--border-primary);
+}
+
+.fix-match__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.fix-match__round {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fix-match__result {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.fix-match__result--win {
+  background: var(--color-primary-light);
+  color: white;
+}
+
+.fix-match__result--draw {
+  background: #facc15;
+  color: black;
+}
+
+.fix-match__result--loss {
+  background: #ef4444;
+  color: white;
+}
+
+.fix-match__result--pending {
+  background: #2a2a3a;
+  color: var(--text-secondary);
+}
+
+.fix-match__teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fix-match__team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.fix-match__team-flag {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.fix-match__team-flag--user {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+}
+
+.fix-match__team-flag--rival {
+  background: #2a2a3a;
+}
+
+.fix-match__team-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.fix-match__team-name--user {
+  color: white;
+}
+
+.fix-match__team-name--rival {
+  color: var(--text-secondary);
+}
+
+.fix-match__score {
+  padding: 0 1.5rem;
+}
+
+.fix-match__score-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+}
+
+.fix-match__score-vs {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #2a2a3a;
+}
+
+/* ========================================
+   Standings Table
+   ======================================== */
+
+.fix-table {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fix-table__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #1a1a24;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.fix-table__header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fix-table__header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fix-table__col-header {
+  color: var(--text-tertiary);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.fix-table__col-header--rank {
+  width: 1.5rem;
+}
+
+.fix-table__col-header--team {
+  flex: 1;
+  text-align: left;
+}
+
+.fix-table__col-header--num {
+  width: 2rem;
+}
+
+.fix-table__col-header--points {
+  width: 2.5rem;
+  color: var(--color-primary-light);
+}
+
+.fix-table__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.fix-table__row:last-child {
+  border-bottom: none;
+}
+
+.fix-table__row--user {
+  background: rgba(255, 230, 0, 0.1);
+}
+
+.fix-table__row--alt {
+  background: rgba(42, 42, 58, 0.5);
+}
+
+.fix-table__rank {
+  width: 1.5rem;
+  text-align: center;
+  font-weight: 900;
+  font-size: 0.875rem;
+}
+
+.fix-table__rank--qualified {
+  color: var(--color-primary-light);
+}
+
+.fix-table__rank--playoff {
+  color: #facc15;
+}
+
+.fix-table__rank--out {
+  color: var(--text-tertiary);
+}
+
+.fix-table__team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.fix-table__flag {
+  font-size: 1.25rem;
+}
+
+.fix-table__team-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.fix-table__team-name--user {
+  color: white;
+}
+
+.fix-table__team-name--other {
+  color: var(--text-secondary);
+}
+
+.fix-table__num {
+  width: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.fix-table__num--played {
+  color: var(--text-secondary);
+}
+
+.fix-table__num--goals {
+  color: var(--color-primary-light);
+}
+
+.fix-table__num--gd {
+  color: var(--color-primary-light);
+}
+
+.fix-table__num--gd-neg {
+  color: #ef4444;
+}
+
+.fix-table__points {
+  width: 2.5rem;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1rem;
+  color: white;
+}
+
+/* ========================================
+   Knockout Matches
+   ======================================== */
+
+.fix-knockout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fix-knockout__match {
+  background: #1a1a24;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.fix-knockout__match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.fix-knockout__round {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fix-knockout__status {
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-light);
+}
+
+.fix-knockout__teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fix-knockout__team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fix-knockout__team-flag {
+  font-size: 1.875rem;
+}
+
+.fix-knockout__team-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.fix-knockout__team-name--user {
+  color: white;
+}
+
+.fix-knockout__team-name--rival {
+  color: var(--text-secondary);
+}
+
+.fix-knockout__score {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.fix-knockout__score-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+}
+
+.fix-knockout__score-vs {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+
+/* ========================================
+   Progress Bar
+   ======================================== */
+
+.fix-progress {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fix-progress__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.fix-progress__label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fix-progress__value {
+  color: white;
+  font-weight: 900;
+}
+
+.fix-progress__bar {
+  height: 0.625rem;
+  background: #2a2a3a;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.fix-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}

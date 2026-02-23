@@ -1,0 +1,294 @@
+/* ========================================
+   DTBadges - Logros/Insignias
+   ======================================== */
+
+.dt-badges__progress {
+  background: linear-gradient(135deg, rgba(26, 26, 36, 0.9) 0%, rgba(13, 13, 13, 0.95) 100%);
+  border: 1px solid rgba(160, 160, 176, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dt-badges__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dt-badges__progress-info h3 {
+  color: #a0a0b0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dt-badges__progress-count {
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.dt-badges__progress-count span {
+  color: #6b6b7b;
+  font-size: 1rem;
+}
+
+.dt-badges__progress-percent {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #FFE600 0%, #0047AB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+}
+
+.dt-badges__progress-percent span {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: white;
+}
+
+.dt-badges__progress-bar {
+  height: 0.75rem;
+  background: #2a2a3a;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.dt-badges__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFE600 0%, #0047AB 100%);
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+/* Badges by Rarity */
+.dt-badges__rarity {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dt-badges__rarity-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.dt-badges__rarity-section h2 svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.dt-badges__rarity-count {
+  color: #6b6b7b;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Rarity Colors */
+.dt-badges__rarity--legendary h2 {
+  color: #facc15;
+}
+
+.dt-badges__rarity--epic h2 {
+  color: #a855f7;
+}
+
+.dt-badges__rarity--rare h2 {
+  color: #FFE600;
+}
+
+.dt-badges__rarity--common h2 {
+  color: #FFE600;
+}
+
+/* Badge Grid */
+.dt-badges__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.dt-badge {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.dt-badge--unlocked.dt-badge--legendary {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+  border-color: rgba(250, 204, 21, 0.3);
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.2);
+}
+
+.dt-badge--unlocked.dt-badge--epic {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+}
+
+.dt-badge--unlocked.dt-badge--rare {
+  background: linear-gradient(135deg, rgba(255, 230, 0, 0.1) 0%, rgba(0, 71, 171, 0.05) 100%);
+  border-color: rgba(255, 230, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.2);
+}
+
+.dt-badge--unlocked.dt-badge--common {
+  background: linear-gradient(135deg, rgba(255, 230, 0, 0.1) 0%, rgba(0, 71, 171, 0.05) 100%);
+  border-color: rgba(255, 230, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.2);
+}
+
+.dt-badge--locked {
+  background: rgba(26, 26, 36, 0.5);
+  border-color: rgba(160, 160, 176, 0.1);
+  opacity: 0.6;
+}
+
+.dt-badge__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.dt-badge__icon--legendary.dt-badge__icon--unlocked {
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+}
+
+.dt-badge__icon--epic.dt-badge__icon--unlocked {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+.dt-badge__icon--rare.dt-badge__icon--unlocked {
+  background: rgba(255, 230, 0, 0.2);
+  color: #FFE600;
+}
+
+.dt-badge__icon--common.dt-badge__icon--unlocked {
+  background: rgba(255, 230, 0, 0.2);
+  color: #FFE600;
+}
+
+.dt-badge__icon--locked {
+  background: #2a2a3a;
+  color: #3a3a4a;
+}
+
+.dt-badge__icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dt-badge__name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.dt-badge__name--unlocked {
+  color: white;
+}
+
+.dt-badge__name--locked {
+  color: #6b6b7b;
+}
+
+.dt-badge__desc {
+  font-size: 0.75rem;
+  color: #a0a0b0;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.dt-badge__unlock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.dt-badge__unlock--legendary {
+  background: rgba(250, 204, 21, 0.1);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.dt-badge__unlock--epic {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.dt-badge__unlock--rare {
+  background: rgba(255, 230, 0, 0.1);
+  color: #FFE600;
+  border: 1px solid rgba(255, 230, 0, 0.2);
+}
+
+.dt-badge__unlock--common {
+  background: rgba(255, 230, 0, 0.1);
+  color: #FFE600;
+  border: 1px solid rgba(255, 230, 0, 0.2);
+}
+
+/* Career Stats */
+.dt-badges__career h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.dt-badges__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.dt-badges__stat-card {
+  background: linear-gradient(135deg, rgba(26, 26, 36, 0.9) 0%, rgba(13, 13, 13, 0.95) 100%);
+  border: 1px solid rgba(160, 160, 176, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dt-badges__stat-value {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #FFE600;
+}
+
+.dt-badges__stat-value--formation {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.dt-badges__stat-label {
+  color: #a0a0b0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
